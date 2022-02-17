@@ -13,7 +13,7 @@ export default function Identificacao({navigation}) {
           <TouchableOpacity style={styles.buttons} onPress={ () => navigation.navigate('Registro')}>  
               <Image source={require('../../../assets/inserir.png')} />
           </TouchableOpacity >
-          <TouchableOpacity style={styles.buttons} onPress={ () => navigation.navigate('Finish')}>  
+          <TouchableOpacity style={styles.buttons} onPress={ () => navigation.navigate('Visualizacao')}>  
               <Image source={require('../../../assets/pesquisar.png')} />
           </TouchableOpacity >
         </View>

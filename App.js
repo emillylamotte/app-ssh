@@ -13,6 +13,7 @@ import InsercaoObservacoes from './src/pages/InsercaoObservacoes';
 import InsercaoOximetria from './src/pages/InsercaoOximetria';
 import InsercaoPressao from './src/pages/InsercaoPressao';
 import Fim from './src/pages/Fim';
+import Visualizacao from './src/pages/Visualizacao';
 
 const Stack = createStackNavigator();
 
@@ -59,6 +60,17 @@ export default function App() {
       component={Registro}
       options={{
         title:'Inserção de dados',
+        headerStyle:{
+          backgroundColor:'#FF0000',
+        },
+        headerTintColor: '#fff'
+      }}
+      />
+      <Stack.Screen 
+      name="Visualizacao" 
+      component={Visualizacao}
+      options={{
+        title:'Dados do paciente',
         headerStyle:{
           backgroundColor:'#FF0000',
         },
