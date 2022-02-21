@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput } from 'reac
 import React from 'react';
 
 export default function Identificacao({navigation}) {
- 
+ //teste
   return (
     <View style={styles.container}>
      
