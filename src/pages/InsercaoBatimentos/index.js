@@ -14,7 +14,7 @@ export default function InsercaoBatimentos({navigation}) {
               <Image source={require('../../../assets/pronto.png')} />
           </TouchableOpacity >
         </View>
-
+    
     </View>
   );
  }

@@ -1,43 +1,64 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Identificacao({navigation}) {
+
+  const paciente = route.params.patient; //recebe o nome do paciente
+
+  //variaveis patra alterar dados do paciente
+  const [temp, setTemp] = useState('');
+  const [bpm, setBpm] = useState('');
+  const [oxi, setOxi] = useState('');
+  const [pressao, setPressao] = useState('');
+  const [obs, setObs] = useState('');
  
   return (
     <View style={styles.container}>
-     
-     <TouchableOpacity 
-        style={styles.optionsButton}      
-        onPress={ () => navigation.navigate('InsercaoTemperatura')}
-     >
-        <Text style={styles.buttonOptions}>Temperatura</Text>
-     </TouchableOpacity> 
-     <TouchableOpacity 
-        style={styles.optionsButton}      
-        onPress={ () => navigation.navigate('InsercaoBatimentos')}
-     >
-        <Text style={styles.buttonOptions}>Batimentos Cardíacos</Text>
-     </TouchableOpacity> 
-     <TouchableOpacity 
-        style={styles.optionsButton}      
-        onPress={ () => navigation.navigate('InsercaoOximetria')}
+
+      <Text>{paciente}</Text>
+
+      <TextInput
+          style={styles.input}
+          value={temp}
+          onChangeText={(temp_value) => {
+            setTemp(temp_value);
+            console.log(temp)
+          }} 
+      />
+      <TextInput
+          style={styles.input}
+          value={bpm}
+          onChangeText={(bpm_value) => {
+            setBpm(bpm_value);
+          }} 
+      />
+      <TextInput
+          style={styles.input}
+          value={oxi}
+          onChangeText={(oxi_value) => {
+            setOxi(oxi_value);
+          }} 
+      />
+      <TextInput
+          style={styles.input}
+          value={pressao}
+          onChangeText={(pressao_value) => {
+            setPressao(pressao_value);
+          }} 
+      />
+      <TextInput
+          style={styles.input}
+          value={obs}
+          onChangeText={(obs_value) => {
+            setObs(obs_value);
+          }}
+       />
+        
+     <TouchableOpacity style={styles.buttons} onPress={ 
+        () => {
+          navigation.navigate('Visualizacao', {patient:username,temp,oxi,bpm,pressao,obs});
+       }}
       >
-        <Text style={styles.buttonOptions}>Oximetria</Text>
-     </TouchableOpacity> 
-     <TouchableOpacity 
-        style={styles.optionsButton}      
-        onPress={ () => navigation.navigate('InsercaoPressao')}
-      >
-        <Text style={styles.buttonOptions}>Pressão Arterial</Text>
-     </TouchableOpacity> 
-     <TouchableOpacity 
-        style={styles.optionsButton}      
-        onPress={ () => navigation.navigate('InsercaoObservacoes')}
-      >
-        <Text style={styles.buttonOptions}>Observações</Text>
-     </TouchableOpacity>  
-     
-     <TouchableOpacity style={styles.buttons} onPress={ () => navigation.navigate('Fim')}>  
         <Image source={require('../../../assets/pronto.png')} />
       </TouchableOpacity >
     
@@ -70,6 +91,18 @@ export default function Identificacao({navigation}) {
     textAlign:'center',
     textAlignVertical:'center',
     padding:10,
+  },
+  input: {
+    backgroundColor: '#525751',
+    width: 345,
+    height: 57,
+    borderRadius: 20,
+    color: '#fff',
+    fontSize: 22,
+  },
+  buttons: {
+    margin: 47,
+    backgroundColor:'red',
   },
 });
 

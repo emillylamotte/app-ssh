@@ -3,9 +3,16 @@ import React, { useEffect, useState } from 'react';
 
 export default function Visualizacao({navigation, route}) {
 
-  const [carregando, setCarregando] = useState(true)
-    const [dados, setDados] = useState([])
+  //const [carregando, setCarregando] = useState(true)
+  //const [dados, setDados] = useState([])
+
+
     const paciente = route.params.patient;
+    const temperatura = route.params.patient.temp;
+    const batimentos = route.params.patient.bpm;
+    const oximetria = route.params.patient.oxi;
+    const pressaoArterial = route.params.patient.pressao;
+    const observacao = route.params.patient.obs;
 
     // useEffect(
     //     () => {
@@ -22,19 +29,24 @@ export default function Visualizacao({navigation, route}) {
      <Text style={styles.name}>{paciente}</Text>
 
      <Text style={styles.title}>Temperatura</Text>
-     <Text style={styles.data}> 29°C</Text> 
+     <Text style={styles.data}>{temperatura}°C</Text> 
 
      <Text style={styles.title}>Batimentos Cardíacos</Text>
-     <Text style={styles.data}>100bpm</Text> 
+     <Text style={styles.data}>{batimentos}bpm</Text> 
 
      <Text style={styles.title}>Oximetria</Text>
-     <Text style={styles.data}> 98% </Text> 
+     <Text style={styles.data}> {oximetria}%</Text> 
      
      <Text style={styles.title}>Pressão Arterial</Text>
-     <Text style={styles.data}> 12.8</Text> 
+     <Text style={styles.data}>{pressaoArterial}</Text> 
     
      <Text style={styles.title}>Observações</Text>
-     <Text style={styles.data}> hello </Text> 
+     <Text style={styles.data}> {observacao}</Text> 
+
+     <TouchableOpacity style={styles.buttons} onPress={ () => navigation.navigate('Fim')}>  
+          <Image source={require('../../../assets/pronto.png')} />
+      </TouchableOpacity >
+        
 
     </View>
   );

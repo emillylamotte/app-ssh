@@ -6,7 +6,7 @@ export default function Fim({navigation}) {
   return (
     <View style={styles.container}>
      
-        <Text style={styles.title}>Registro armazenado com sucesso</Text>
+        <Text style={styles.title}>Fim da operação. Todos os registros foram salvos com sucesso!</Text>
         
         <View style={styles.viewButtons}>
           <TouchableOpacity style={styles.buttons} onPress={ () => navigation.navigate('Identificacao')}>  

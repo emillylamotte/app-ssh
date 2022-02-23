@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
 import React from 'react';
 
 export default function Login({navigation}) {
@@ -14,7 +14,7 @@ export default function Login({navigation}) {
         
         <TouchableOpacity 
         style={styles.startButton}      
-        onPress={ () => navigation.navigate('Identificacao')}
+        onPress={ () => navigation.navigate('Registro')}
         >
             <Text style={styles.buttonEntrar}>Entrar</Text>
         </TouchableOpacity>  

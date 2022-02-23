@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextField, View, Image, TouchableOpacity, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput } from 'react-native';
 import React, { useState } from 'react';
 
 export default function Identificacao({ navigation }) {
@@ -7,6 +7,7 @@ export default function Identificacao({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <Text style={styles.title}>Paciente</Text>
       <TextInput
         style={styles.input}
         value={username}
@@ -14,13 +15,17 @@ export default function Identificacao({ navigation }) {
           setUsername(text);
         }} 
         />
-      <TouchableOpacity style={styles.buttons} onPress={() => {
-        navigation.navigate('Visualizacao', {patient:username, temp:shaush});
-      }}>
-        <Image source={require('../../../assets/pesquisar.png')} />
-      </TouchableOpacity >
-
+        <View>
+          <TouchableOpacity style={styles.buttons} onPress={() => {navigation.navigate('Registro', {patient:username});}}>
+            <Image source={require('../../../assets/inserir.png')} />
+          </TouchableOpacity >
+          <TouchableOpacity style={styles.buttons} onPress={ () => navigation.navigate('Visualizacao')}>  
+            <Image source={require('../../../assets/pesquisar.png')} />
+          </TouchableOpacity >
+        </View>
     </View>
+
+    
   );
 }
 
@@ -70,6 +75,7 @@ const styles = StyleSheet.create({
   },
   buttons: {
     margin: 47,
+    backgroundColor:'red',
   },
 });
 
