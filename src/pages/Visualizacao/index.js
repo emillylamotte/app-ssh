@@ -34,7 +34,7 @@ export default function Visualizacao({navigation, route}) {
      <Text style={styles.data}> 12.8</Text> 
     
      <Text style={styles.title}>Observações</Text>
-     <Text style={styles.data}> hello </Text> 
+     <Text style={styles.data}> Com fortes dores de cabeça </Text> 
 
     </View>
   );

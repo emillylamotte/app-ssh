@@ -15,7 +15,7 @@ export default function Identificacao({ navigation }) {
         }} 
         />
       <TouchableOpacity style={styles.buttons} onPress={() => {
-        navigation.navigate('Visualizacao', {patient:username, temp:shaush});
+        navigation.navigate('Visualizacao', {patient:username});
       }}>
         <Image source={require('../../../assets/pesquisar.png')} />
       </TouchableOpacity >
