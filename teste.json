@@ -1,0 +1,20 @@
+{
+    "data": [
+        {
+            "nome": "Emilly",
+            "bpm":72,
+            "oxi":98,
+            "temp":38,
+            "obs":"Paciente reclama de dor de cabeça e cansaço",
+            "pressao":12.8
+        },
+        {
+            "nome": "Pedro",
+            "bpm":60,
+            "oxi":99,
+            "temp":35,
+            "obs":"Nada a observar",
+            "pressao":11.5
+        }
+    ]
+}

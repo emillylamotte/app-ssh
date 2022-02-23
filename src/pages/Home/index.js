@@ -1,18 +1,20 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
+import Dados from '../../../fetch';
 
 export default function Home({navigation}) {
  
   return (
     <View style={styles.container}>
-       <Image source={require('../../../assets/logo.png')} style={styles.logo} />
+      <Image source={require('../../../assets/logo.png')} style={styles.logo} />
       
       <TouchableOpacity 
       style={styles.startButton}      
       onPress={ () => navigation.navigate('Login')}
       >
       <Text style={{color:'#fff', fontSize:22, textAlign:'center', marginTop:10}}> Começar</Text>
-      </TouchableOpacity>  
+      </TouchableOpacity> 
+      
     </View>
   );
  }

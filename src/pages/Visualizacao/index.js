@@ -1,28 +1,41 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput } from 'react-native';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-export default function Visualizacao({navigation}) {
+export default function Visualizacao({navigation, route}) {
+
+  const [carregando, setCarregando] = useState(true)
+    const [dados, setDados] = useState([])
+    const paciente = route.params.patient;
+
+    // useEffect(
+    //     () => {
+    //         fetch('https://raw.githubusercontent.com/PedroCorcaque/flaskapp-mongodb-aic-iii/master/teste.json')
+    //             .then((resp) => resp.json())
+    //             .then((json) => (setDados(json.data[0])))
+    //             .catch(() => (alert('Erro ao carregar os dados')))
+    //             .finally(() => setCarregando(false))
+    //     }, [])
  
   return (
     <View style={styles.container}>
      
-     <Text style={styles.name}>Emilly Gomes Lamotte</Text>
+     <Text style={styles.name}>{paciente}</Text>
 
      <Text style={styles.title}>Temperatura</Text>
-     <Text style={styles.data}> 37º </Text> 
+     <Text style={styles.data}> 29°C</Text> 
 
      <Text style={styles.title}>Batimentos Cardíacos</Text>
-     <Text style={styles.data}> 74 </Text> 
+     <Text style={styles.data}>100bpm</Text> 
 
      <Text style={styles.title}>Oximetria</Text>
-     <Text style={styles.data}> 93% </Text> 
+     <Text style={styles.data}> 98% </Text> 
      
      <Text style={styles.title}>Pressão Arterial</Text>
-     <Text style={styles.data}> 12.3 </Text> 
+     <Text style={styles.data}> 12.8</Text> 
     
      <Text style={styles.title}>Observações</Text>
-     <Text style={styles.data}> Alguma informação complementar sobre o atendimento que foi realizado </Text> 
-    
+     <Text style={styles.data}> hello </Text> 
+
     </View>
   );
  }
